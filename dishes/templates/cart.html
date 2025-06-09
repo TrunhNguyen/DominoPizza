@@ -1,0 +1,35 @@
+{% extends "home.html" %}
+{% load static %}
+{% block title %}
+  Domino's Pizza
+{% endblock %}
+
+
+{% block content %}
+  <style>
+    .text-design
+    {
+      text-decoration: none;
+      color: black;
+      font-size: 200%;
+      text-align: center;
+      padding: 10px 30px;
+      background-color: chocolate;
+      border-radius: 15px;
+    }
+    .cart-design
+    {
+      font-size: 30px;
+    }
+  </style>
+
+  <h2 class="text-design">GIỎ HÀNG</h2>
+    <ul>
+  {% for id, item in cart.items %}
+    <li class="cart-design">{{ item.name }} - SL: {{ item.quantity }} - Đơn giá: {{ item.price }} đ</li>
+  {% endfor %}
+    </ul>
+    <h3 class="cart-design">Tổng cộng: {{ total_price }} đ</h3>
+    <a href="{% url 'deleteall' %}" class="text-design" style="font-size: 150%;"><b>Xóa giỏ hàng</b></a></span>
+    <a href="/dishes/" class="text-design" style="font-size: 150%;"><b>Chọn thêm món</b></a></span>
+{% endblock %}
