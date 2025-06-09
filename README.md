@@ -5,7 +5,7 @@
 
 Đây là ứng dụng web giúp khách hàng xem danh sách pizza, thêm vào giỏ hàng, và xem tổng giá tiền.
 
-## Cách chạy dự án
+## Cách chạy dự án (vào terminal)
 
 1. Tạo môi trường ảo:
 
