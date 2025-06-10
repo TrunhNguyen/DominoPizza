@@ -23,7 +23,7 @@ source venv/bin/activate
 
 3. Cài đặt thư viện:
 
-pip install -r requirements.txt
+pip install -r requirement.txt
 
 4. Chạy server:
 
