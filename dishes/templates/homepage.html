@@ -7,7 +7,16 @@
 
 {% block content %}
 
+  <style>
+    .full-width-img {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+    }
+  </style>
 
-  <img src="{% static 'images/dominos-pizza-ha-noi-11.png' %}" style="width:100%px;height:auto">
+  <img src="{% static 'images/dominos-pizza-ha-noi-11.png' %}" class="full-width-img">
   
 {% endblock %}
