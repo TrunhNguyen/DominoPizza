@@ -134,9 +134,18 @@ def place_order(request):
 def admin_dashboard(request):
     return render(request, 'admin.html')
 
-def order_list(request, id):
-    dish = get_object_or_404(Products, id=id)
+def order_list(request):
+    orderlist = Orders.objects.select_related('product', 'customer').all()
+    template = loader.get_template('orderlist.html')
+    context = {
+        'orderlist': orderlist,
+    }
+    return HttpResponse(template.render(context, request))
 
+def delete_order(request, order_id):
+    order = get_object_or_404(Orders, id=order_id)
+    order.delete()
+    return redirect('/orderlist/')
 
 @api_view(['GET'])
 def pizza_detail(request, id):
