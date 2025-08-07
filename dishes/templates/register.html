@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+  <body>
+    <h1 class="logodes2">Domino Pizza</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <div style="color: red; font-size: 150%;">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="post" class="login-des">
+    {% csrf_token %}
+      <input type="text" name="username" placeholder="Tên đăng nhập" class="login-text-des" >
+      <input type="password" name="password" placeholder="Mật khẩu" class="login-text-des">
+      <input type="password" name="password2" placeholder="Nhập lại mật khẩu" class="login-text-des">
+      <button type="submit" class="login-text-des">Đăng ký</button>
+    </form>
+    <div class="login-text-des">
+        <a href="{% url 'login' %}">Đã có tài khoản? Đăng nhập</a>
+    </div>
+  </body>
+</html>

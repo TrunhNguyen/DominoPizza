@@ -3,7 +3,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}{% endblock %}</title>
+  <title>Domino's Pizza - ADMIN</title>
   <link rel="stylesheet" href="{% static '/style.css' %}">
 </head>
 <body>
@@ -12,15 +12,10 @@
     <img src="{% static 'images/Domino_pizza_logo.png' %}" style="width:40px;height:40px; margin-left: 5px;" alt="Domino's Pizza">
     <span class="logodes"><b>Domino's Pizza</b></span>
   </a>
-  <span class="des"> <b>HI {{request.user.username}}</b></span>
-  <span> <a href="{% url 'dishes' %}" class="des"><b>THỰC ĐƠN</b></a></span>
-  <span> <a href="{% url 'comingsoon' %}" class="des"><b>KHUYẾN MÃI</b></a></span>
-  <span> <a href="{% url 'view_cart' %}" class="des"><b>GIỎ HÀNG</b></a></span>
+  <span class="des"> <b>HI ADMIN: {{request.user.username}}</b></span>
+  <span> <a href="{% url 'dishes' %}" class="des"><b>ĐƠN ĐẶT HÀNG</b></a></span>
   <span> <a href="/" class="des"><b>ĐĂNG XUẤT</b></a></span>
 </div>
-
-{% block content %}
-{% endblock %}
 
 </body>
 </html>
