@@ -9,4 +9,4 @@ venv/
 Thumbs.db
 *.log
 *.tmp
-setting_locals.py
+settings_local.py
