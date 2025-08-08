@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%m68e0$#sqqo7(c=$x5%)7^-e*0uls*uqa%k9bw!j$eaa552(6'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -75,16 +75,7 @@ WSGI_APPLICATION = 'my_pizza_company.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'trung06052006',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
+
 
 
 # Password validation
@@ -149,3 +140,8 @@ LOGGING = {
 LOGIN_REDIRECT_URL = '/home/'      
 LOGIN_URL = '/'       
 LOGOUT_REDIRECT_URL = '/'
+
+try:
+    from .settings_local import *
+except ImportError:
+    pass
