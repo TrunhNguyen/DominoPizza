@@ -144,4 +144,6 @@ LOGOUT_REDIRECT_URL = '/'
 try:
     from .settings_local import *
 except ImportError:
-    pass
+    raise Exception(
+        "Missing settings_local.py — please copy settings_local.example.py and fill in SECRET_KEY, DATABASES, etc."
+    )
