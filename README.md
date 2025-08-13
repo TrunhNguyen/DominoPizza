@@ -21,15 +21,28 @@ venv\Scripts\activate
 
 source venv/bin/activate
 
-3. Cài đặt thư viện:
+3. Truy cập vào project:
+
+cd venv
+cd DominoPizza
+
+4. Cài đặt thư viện:
 
 pip install -r requirement.txt
 
-4. Chạy server:
+5. Import Database:
+
+- CREATE DATABASE mydb
+- psql -U postgres mydb < backup.sql
+- cp settings_local.example.py settings_local.py
+- mở settings_local.py và thay thông tin của mình vào
+
+6. Chạy server:
 
 python manage.py runserver
 
-5. Mở trình duyệt vào địa chỉ:
+
+7. Mở trình duyệt vào địa chỉ: 
 
 http://127.0.0.1:8000/
 
